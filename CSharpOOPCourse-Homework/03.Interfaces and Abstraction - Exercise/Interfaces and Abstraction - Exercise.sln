@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.BorderControl", "04.BorderControl\04.BorderControl.csproj", "{3146156E-48FD-4FB8-931F-0A9B23CE8F92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.Telephony", "03.Telephony\03.Telephony.csproj", "{9808AB25-3C63-475D-B7F9-41AEE969F52F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3146156E-48FD-4FB8-931F-0A9B23CE8F92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3146156E-48FD-4FB8-931F-0A9B23CE8F92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3146156E-48FD-4FB8-931F-0A9B23CE8F92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3146156E-48FD-4FB8-931F-0A9B23CE8F92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9808AB25-3C63-475D-B7F9-41AEE969F52F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9808AB25-3C63-475D-B7F9-41AEE969F52F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9808AB25-3C63-475D-B7F9-41AEE969F52F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9808AB25-3C63-475D-B7F9-41AEE969F52F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8DFF60C7-BE4C-4720-B736-C11C630E4B2A}
+	EndGlobalSection
+EndGlobal
