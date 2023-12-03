@@ -5,10 +5,18 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01.Vehicles", "01.Vehicles\01.Vehicles.csproj", "{D3DBDE5C-16CB-466F-8DA5-3A1552983381}"
 EndProject
+<<<<<<< HEAD
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03.Raiding", "03.Raiding\03.Raiding.csproj", "{D6F8C206-04F9-4108-87E0-E99BB9C55A14}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.WildFarm", "04.WildFarm\04.WildFarm.csproj", "{787CBD21-01D8-446C-9684-D5709EE158B6}"
 EndProject
+=======
+<<<<<<< HEAD
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.Raiding", "03.Raiding\03.Raiding.csproj", "{D6F8C206-04F9-4108-87E0-E99BB9C55A14}"
+EndProject
+=======
+>>>>>>> dceb87efa11449e92d5bc8180c9f86d94d87bf7e
+>>>>>>> 34a150112e2832faf825691903a8286bd6e7d6c4
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,14 +27,23 @@ Global
 		{D3DBDE5C-16CB-466F-8DA5-3A1552983381}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3DBDE5C-16CB-466F-8DA5-3A1552983381}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3DBDE5C-16CB-466F-8DA5-3A1552983381}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 34a150112e2832faf825691903a8286bd6e7d6c4
 		{D6F8C206-04F9-4108-87E0-E99BB9C55A14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D6F8C206-04F9-4108-87E0-E99BB9C55A14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6F8C206-04F9-4108-87E0-E99BB9C55A14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6F8C206-04F9-4108-87E0-E99BB9C55A14}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< HEAD
 		{787CBD21-01D8-446C-9684-D5709EE158B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{787CBD21-01D8-446C-9684-D5709EE158B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{787CBD21-01D8-446C-9684-D5709EE158B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{787CBD21-01D8-446C-9684-D5709EE158B6}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+=======
+>>>>>>> dceb87efa11449e92d5bc8180c9f86d94d87bf7e
+>>>>>>> 34a150112e2832faf825691903a8286bd6e7d6c4
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
