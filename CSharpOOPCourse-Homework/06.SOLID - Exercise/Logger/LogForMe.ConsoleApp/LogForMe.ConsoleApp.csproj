@@ -6,4 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Loggers\" />
+    <Folder Include="Layouts\" />
+    <Folder Include="Appenders\" />
+    <Folder Include="Exceptions\" />
+    <Folder Include="Utils\" />
+  </ItemGroup>
+
 </Project>
