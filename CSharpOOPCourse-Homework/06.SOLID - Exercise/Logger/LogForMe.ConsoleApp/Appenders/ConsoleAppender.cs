@@ -19,7 +19,7 @@ namespace LogForMe.ConsoleApp.Appenders
 
         public void AppendMessage(Message message)
         {
-            Console.WriteLine(message);
+            Console.WriteLine(string.Format(Layout.Format, message.DateTime, message.ReportLevel, message.Text));
         }
     }
 }

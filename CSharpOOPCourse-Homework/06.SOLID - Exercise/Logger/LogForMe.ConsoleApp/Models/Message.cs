@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LogForMe.ConsoleApp.Enums;
+using LogForMe.ConsoleApp.Exceptions;
+using LogForMe.ConsoleApp.Utils;
 
 namespace LogForMe.ConsoleApp.Models
 {
@@ -10,15 +8,48 @@ namespace LogForMe.ConsoleApp.Models
     {
         private string dateTime;
         private string text;
+        private ReportLevel reportLevel;
 
-        public Message(string dateTime, string text)
+        public Message(string dateTime, string text, ReportLevel reportLevel)
         {
-            this.DateTime = dateTime;
-            this.Text = text;
+            DateTime = dateTime;
+            Text = text;
+            ReportLevel = reportLevel;
         }
 
-        public string DateTime { get => dateTime; set => dateTime = value; }
+        public string DateTime 
+        { 
+            get => dateTime; 
+            private set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new EmptyDateTimeException();
+                }
 
-        public string Text { get => this.text; set => this.text = value; }
+                if (!DateTimeValidator.ValidateDateTimeFormats(value))
+                {
+                    throw new InvalidDateTimeFormat();
+                }
+
+                dateTime = value;
+            } 
+        }
+
+        public string Text 
+        { 
+            get => text;
+            private set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new EmptyInformationException();
+                }
+
+                text = value;
+            }
+        }
+
+        public ReportLevel ReportLevel { get => reportLevel; private set => reportLevel = value; }
     }
 }

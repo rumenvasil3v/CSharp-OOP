@@ -1,11 +1,7 @@
 ﻿using LogForMe.ConsoleApp.Appenders.Contracts;
+using LogForMe.ConsoleApp.Enums;
 using LogForMe.ConsoleApp.Loggers.Contracts;
 using LogForMe.ConsoleApp.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LogForMe.ConsoleApp.Loggers
 {
@@ -19,34 +15,37 @@ namespace LogForMe.ConsoleApp.Loggers
         }
         public void Info(string dateTime, string information)
         {
-            throw new NotImplementedException();
+            LogMessage(dateTime, information, ReportLevel.Info);
         }
         public void Warning(string dateTime, string information)
         {
-            throw new NotImplementedException();
+            LogMessage(dateTime, information, ReportLevel.Warning);
         }
         public void Error(string dateTime, string information)
         {
-            throw new NotImplementedException();
+            LogMessage(dateTime, information, ReportLevel.Error);
         }
 
         public void Critical(string dateTime, string information)
         {
-            throw new NotImplementedException();
+            LogMessage(dateTime, information, ReportLevel.Critical);
         }
 
         public void Fatal(string dateTime, string information)
         {
-            LogMessage(dateTime, information);
+            LogMessage(dateTime, information, ReportLevel.Fatal);
         }
 
-        private void LogMessage(string dateTime, string information)
+        private void LogMessage(string dateTime, string information, ReportLevel reportLevel)
         {
-            Message message = new(dateTime, information);
+            Message message = new(dateTime, information, reportLevel);
 
             foreach (IAppender appender in this.appenders)
             {
-                appender.AppendMessage(message);
+                if (message.ReportLevel >= appender.ReportLevel)
+                {
+                    appender.AppendMessage(message);
+                }
             }
         }
     }
