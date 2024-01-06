@@ -25,7 +25,7 @@ namespace LogForMe.ConsoleApp.IO
             stringBuilder = new StringBuilder();
         }
 
-        public LogFile(string name, string extension, string path)
+        public LogFile(string name, string extension, string path) : this()
         {
             this.Name = name;
             this.Extension = extension;
@@ -92,6 +92,11 @@ namespace LogForMe.ConsoleApp.IO
             {
                 foreach (var character in message)
                 {
+                    if (char.IsWhiteSpace(character))
+                    {
+                        continue;
+                    }
+
                     int characterCode = character;
                     size += characterCode;
                 }

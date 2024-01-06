@@ -5,21 +5,19 @@ using LogForMe.ConsoleApp.Models;
 
 namespace LogForMe.ConsoleApp.Appenders
 {
-    public class ConsoleAppender : IAppender
+    public class ConsoleAppender : Appender
     {
+        public ConsoleAppender(ILayout layout) : base(layout)
+        { }
 
-        public ConsoleAppender(ILayout layout)
-        {
-            this.Layout = layout;
-        }
+        public ConsoleAppender(ILayout layout, ReportLevel reportLevel) : base(layout, reportLevel)
+        { }
 
-        public ILayout Layout { get; private set; }
-
-        public ReportLevel ReportLevel { get; set; }
-
-        public void AppendMessage(Message message)
+        public override void AppendMessage(Message message)
         {
             Console.WriteLine(string.Format(Layout.Format, message.DateTime, message.ReportLevel, message.Text));
+
+            MessagesAppended++;
         }
     }
 }

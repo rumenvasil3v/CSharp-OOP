@@ -13,14 +13,17 @@ namespace LogForMe.ConsoleApp.Loggers
         {
             this.appenders = appenders;
         }
+
         public void Info(string dateTime, string information)
         {
             LogMessage(dateTime, information, ReportLevel.Info);
         }
+
         public void Warning(string dateTime, string information)
         {
             LogMessage(dateTime, information, ReportLevel.Warning);
         }
+
         public void Error(string dateTime, string information)
         {
             LogMessage(dateTime, information, ReportLevel.Error);

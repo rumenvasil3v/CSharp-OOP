@@ -5,6 +5,21 @@ using LogForMe.ConsoleApp.Loggers;
 using LogForMe.ConsoleApp.Loggers.Contracts;
 using LogForMe.ConsoleApp.Enums;
 using LogForMe.ConsoleApp.Layouts;
+using LogForMe.ConsoleApp.IO;
+using TestLogger.IO.Contracts;
+using TestLogger.IO;
+using TestLogger.Core.Contracts;
+using TestLogger.Core;
+using TestLogger.Factories.Contracts;
+using TestLogger.Factories;
+
+IReader reader = new ConsoleReader();
+IWriter writer = new ConsoleWriter();
+IAppenderFactory appenderFactory = new AppendFactory();
+ILayoutFactory layoutFactory = new LayoutFactory();
+
+IEngine engine = new Engine(reader, writer, appenderFactory, layoutFactory);
+engine.Run();
 
 //ILayout simpleLayout = new XmlLayout();
 //IAppender consoleAppender = new ConsoleAppender(simpleLayout);

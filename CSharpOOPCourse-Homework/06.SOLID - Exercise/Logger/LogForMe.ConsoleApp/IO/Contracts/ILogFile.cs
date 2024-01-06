@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LogForMe.ConsoleApp.Layouts.Contracts;
+using LogForMe.ConsoleApp.Models;
 
 namespace LogForMe.ConsoleApp.IO.Contracts
 {
@@ -17,5 +14,7 @@ namespace LogForMe.ConsoleApp.IO.Contracts
         string FullPath { get; }
 
         int Size { get; }
+
+        void Write(Message message, ILayout layout);
     }
 }

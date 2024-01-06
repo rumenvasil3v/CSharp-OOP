@@ -1,35 +1,47 @@
-﻿using LogForMe.ConsoleApp.Appenders.Contracts;
-using LogForMe.ConsoleApp.Enums;
+﻿using LogForMe.ConsoleApp.Enums;
 using LogForMe.ConsoleApp.IO;
+using LogForMe.ConsoleApp.IO.Contracts;
 using LogForMe.ConsoleApp.Layouts.Contracts;
 using LogForMe.ConsoleApp.Models;
+using System.Text;
 
 namespace LogForMe.ConsoleApp.Appenders
 {
-    public class FileAppender : IAppender
+    public class FileAppender : Appender
     {
-        private const string Path = @"../../../log.txt";
+        public FileAppender(ILayout layout) : base(layout)
+        { }
 
-        private LogFile logFileInfo;
+        public FileAppender(ILayout layout, ReportLevel reportLevel) : base(layout, reportLevel)
+        { }
 
-        public FileAppender(ILayout layout, LogFile logFileInfo)
+        public FileAppender(ILayout layout, ILogFile logFileInfo) : this(layout)
         {
-            this.Layout = layout;
-            this.logFileInfo = logFileInfo;
+            this.LogFile = logFileInfo;
         }
 
-        public ILayout Layout { get; private set; }
-
-        public ReportLevel ReportLevel { get; set; }
-
-        public void AppendMessage(Message message)
+        public FileAppender(ILayout layout, ReportLevel reportLevel, ILogFile logFileInfo) : this(layout, reportLevel)
         {
-            using (StreamWriter streamWriter = new(Path, true))
+            this.LogFile = logFileInfo;
+        }
+
+        public ILogFile LogFile { get; private set; }
+
+        public override void AppendMessage(Message message)
+        {
+            using (StreamWriter streamWriter = new(LogFile.FullPath, true))
             {
                 streamWriter.WriteLine(string.Format(Layout.Format, message.DateTime, message.ReportLevel, message.Text));
             }
 
-            logFileInfo.Write(message, Layout);
+            LogFile.Write(message, Layout);
+
+            MessagesAppended++;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + $", File size: {LogFile.Size}";
         }
     }
 }
